@@ -1,0 +1,37 @@
+{
+  "name": "ass",
+  "version": "1.0.0",
+  "description": "Sistema de agendamento de serviços na secretaria",
+  "keywords": [
+    "agendamento",
+    "serviço"
+  ],
+  "homepage": "https://github.com/AlberNgoma/ass#readme",
+  "bugs": {
+    "url": "https://github.com/AlberNgoma/ass/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlberNgoma/ass.git"
+  },
+  "license": "ISC",
+  "author": "AlberNgoma",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.2",
+    "connect-flash": "^0.1.1",
+    "express": "^5.2.1",
+    "express-handlebars": "^9.0.1",
+    "express-session": "^1.19.0",
+    "mongoose": "^9.6.1",
+    "multer": "^2.1.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "passport-strategy": "^1.0.0"
+  }
+}
