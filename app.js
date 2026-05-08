@@ -15,6 +15,11 @@ const hdb = handlebars.create({
 app.engine('hbs', hdb.engine)
 app.set('view engine', 'hbs')
 
+/* intern routes */
+app.get("/", (req, res)=>{
+    res.render("home")
+})
+
 /* server listen */
 app.listen(3000, () => {
     console.log("server fly - localhost:3000")
