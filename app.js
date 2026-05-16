@@ -29,12 +29,18 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+/* files import */
+import userRoutes from './routes/user/user.route.js'
+
 /* internal routes */
 app.get("/", (req, res) => {
     res.render("home")
 })
 
+/* external roues */
+app.use('/user', userRoutes)
+
 /* server listen */
 app.listen(3000, () => {
-    console.log("server fly - localhost:3000")
+    console.log("Server Fly - localhost:3000")
 })
