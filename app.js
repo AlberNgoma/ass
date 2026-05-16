@@ -4,11 +4,12 @@ import handlebars from 'express-handlebars'
 import { fileURLToPath } from 'url'
 import path from 'path'
 import bodyParser from 'body-parser'
+import mongoose from 'mongoose'
 
-/* config app */
+/* app config */
 const app = express();
 
-/* config handlebars */
+/* handlebars config */
 const hdb = handlebars.create({
 
     defaultLayout: 'main',
@@ -28,6 +29,14 @@ app.use(express.static(path.join(__dirname, 'public')))
 /* body parser */
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+/* mongoose config */
+mongoose.connect('mongodb://localhost/ass').then(() => {
+
+    console.log('MongoDB connected')
+    //waiting createAdminIfNotExists()
+
+}).catch(err => { console.log('MongoDB Error: ' + err) })
 
 /* files import */
 import userRoutes from './routes/user/user.route.js'

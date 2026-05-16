@@ -5,8 +5,8 @@ import * as UserServices from '../../services/user.service.js'
 export const createUser = (req, res) => {
 
     const data = {
-        name: req.body.signupUserName,
-        tel: req.body.signupUserTel
+        name: req.body.signupUserName || 'Vladmir Cach',
+        tel: req.body.signupUserTel || '945217566'
     }
 
     UserServices.create(data).then(() => {
