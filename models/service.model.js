@@ -15,6 +15,10 @@ const ServiceSchema = new Schema({
     duraction: {
         type: Number,
         required: true
+    },
+    create: {
+        type: Date,
+        default: Date.now
     }
 })
 
