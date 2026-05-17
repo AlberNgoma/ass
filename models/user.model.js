@@ -17,6 +17,10 @@ const UserSchema = new Schema({
         enum: ['Usuário', 'Estudante', 'Secretária', 'Administrador'],
         default: 'Usuário'
     },
+    foto: {
+        type: String,
+        default: 'avatar.png'
+    },
     date: {
         create: {
             type: Date,

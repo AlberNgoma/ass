@@ -14,11 +14,27 @@ export const create = (data) => {
 export const update = (id, data) => {
 
     User.findByIdAndUpdate(
+
         { _id: id },
         { $set: data }
+
     ).then(() => {
 
         console.log('Usuário Atualizado')
+
+    }).catch(err => console.log(err))
+}
+
+export const updatePhoto = (id, foto) => {
+
+    User.findByIdAndUpdate(
+
+        {_id: id},
+        {$set: {foto: foto}}
+
+    ).then(() => {
+
+        console.log('Foto de Usuário Atuilizado')
 
     }).catch(err => console.log(err))
 }

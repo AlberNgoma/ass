@@ -40,3 +40,19 @@ export const updateUser = (req, res) => {
         res.redirect('/user/profile')
     })
 }
+
+export const updatePhotoUser = (req, res) => {
+
+    const foto = req.body.updateUserPhoto
+
+    UserServices.updatePhoto(req.params.id, foto).then(() => {
+
+        // waiting flash msg
+        res.redirect('/user/profile')
+
+    }).catch(err => {
+
+        console.log('Erro Interno: ' + err)
+        res.redirect('/user/profile')
+    })
+}
