@@ -6,7 +6,7 @@ export const create = (data) => {
 
     new User(data).save().then(() => {
 
-        console.log('Usuário Cadastrado: ' + data)
+        console.log('Usuário Cadastrado')
 
     }).catch(err => console.log(err))
 }

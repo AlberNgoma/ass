@@ -40,6 +40,7 @@ mongoose.connect('mongodb://localhost/ass').then(() => {
 
 /* files import */
 import userRoutes from './routes/user/user.route.js'
+import adminUsersManagementRoutes from './routes/admin/users.route.js'
 
 /* internal routes */
 app.get("/", (req, res) => {
@@ -48,6 +49,7 @@ app.get("/", (req, res) => {
 
 /* external roues */
 app.use('/user', userRoutes)
+app.use('/admin', adminUsersManagementRoutes)
 
 /* server listen */
 app.listen(3000, () => {
