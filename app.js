@@ -34,7 +34,7 @@ app.use(bodyParser.json())
 mongoose.connect('mongodb://localhost/ass').then(() => {
 
     console.log('MongoDB connected')
-    //waiting createAdminIfNotExists()
+    // waiting createAdminIfNotExists()
 
 }).catch(err => { console.log('MongoDB Error: ' + err) })
 
