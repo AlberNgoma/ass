@@ -12,6 +12,6 @@ router.get('/users/:role', UsersManagerControllers.readUsers)
 router.post('/users/block/:id', UsersManagerControllers.blockUser)
 router.post('/users/unblock/:id', UsersManagerControllers.unblockUser)
 router.post('/users/update/role/:id', UsersManagerControllers.updateRoleUser)
-// delete user
+router.post('/users/delete/:id', UsersManagerControllers.deleteUser)
 
 export default router

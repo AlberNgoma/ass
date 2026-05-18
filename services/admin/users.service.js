@@ -55,3 +55,12 @@ export const updateRole = (id, role) => {
 
     }).catch(err => console.log(err))
 }
+
+export const delet = (id) => {
+
+    User.findByIdAndDelete({_id: id}).then(() => {
+
+        console.log('Usuário Deletado')
+
+    }).catch(err => console.log(err))
+}
