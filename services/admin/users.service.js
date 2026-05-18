@@ -27,3 +27,17 @@ export const block = (id) => {
 
     }).catch(err => console.log(err))
 }
+
+export const unblock = (id) => {
+
+    User.findByIdAndUpdate(
+    
+        {_id: id},
+        {$set: {status: 'Offline'}}
+
+    ).then(() => {
+
+        console.log('Usuário Desbloqueado')
+
+    }).catch(err => console.log(err))
+}

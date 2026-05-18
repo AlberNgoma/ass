@@ -35,3 +35,20 @@ export const blockUser = (req, res) => {
         res.redirect(`/admin/users#${id}`)
     })
 }
+
+export const unblockUser = (req, res) => {
+
+    const id = req.params.id
+
+    UsersManagerServices.unblock(id).then(() => {
+
+        // waiting flash msg
+        res.redirect(`/admin/users#${id}`)
+
+    }).catch(err => {
+
+        console.log('Erro Interno: ' + err)
+        // waiting flash msg
+        res.redirect(`/admin/users#${id}`)
+    })
+}

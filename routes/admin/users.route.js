@@ -10,7 +10,7 @@ import * as UsersManagerControllers from '../../controllers/admin/users.controll
 /* user management by admin routes */
 router.get('/users/:role', UsersManagerControllers.readUsers)
 router.post('/users/block/:id', UsersManagerControllers.blockUser)
-// unblock user
+router.post('/users/unblock/:id', UsersManagerControllers.unblockUser)
 // become user as secretaria
 // become secretaria as user
 // delete user
