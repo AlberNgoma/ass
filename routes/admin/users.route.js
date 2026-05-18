@@ -11,8 +11,7 @@ import * as UsersManagerControllers from '../../controllers/admin/users.controll
 router.get('/users/:role', UsersManagerControllers.readUsers)
 router.post('/users/block/:id', UsersManagerControllers.blockUser)
 router.post('/users/unblock/:id', UsersManagerControllers.unblockUser)
-// become user as secretaria
-// become secretaria as user
+router.post('/users/update/role/:id', UsersManagerControllers.updateRoleUser)
 // delete user
 
 export default router

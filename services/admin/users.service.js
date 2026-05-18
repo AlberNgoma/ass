@@ -41,3 +41,17 @@ export const unblock = (id) => {
 
     }).catch(err => console.log(err))
 }
+
+export const updateRole = (id, role) => {
+
+    User.findByIdAndUpdate(
+
+        {_id: id},
+        {$set: {role: role}}
+
+    ).then(() => {
+
+        console.log('Role Atulizado')
+
+    }).catch(err => console.log(err))
+}
