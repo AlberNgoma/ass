@@ -17,6 +17,11 @@ const UserSchema = new Schema({
         enum: ['Usuário', 'Estudante', 'Secretária', 'Administrador'],
         default: 'Usuário'
     },
+    status: {
+        type: String,
+        enum: ['Offline', 'Online', 'Bloqueado'],
+        default: 'Offline'
+    },
     foto: {
         type: String,
         default: 'avatar.png'

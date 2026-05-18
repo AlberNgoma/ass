@@ -13,3 +13,17 @@ export const read = (role) => {
 
         }).catch(err => console.log(err))
 }
+
+export const block = (id) => {
+
+    User.findByIdAndUpdate(
+        
+        {_id: id},
+        {$set: {status: 'Bloqueado'}}
+
+    ).then(() => {
+
+        console.log('Usuário Bloqueado')
+
+    }).catch(err => console.log(err))
+}

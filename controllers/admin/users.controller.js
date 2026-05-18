@@ -8,7 +8,6 @@ export const readUsers = (req, res) => {
 
     UsersManagerServices.read(role).then((users) => {
 
-        console.log(users)
         // waiting flash msg
         // waiting render view w/ users data
         
@@ -17,5 +16,22 @@ export const readUsers = (req, res) => {
         console.log('Erro Interno: ' + err)
         // waiting flash msg
         res.redirect(`/admin/users#${role}`)
+    })
+}
+
+export const blockUser = (req, res) => {
+
+    const id = req.params.id
+
+    UsersManagerServices.block(id).then(() => {
+
+        // waiting flash msg
+        res.redirect(`/admin/users#${id}`)
+
+    }).catch(err => {
+        
+        console.log('Erro Interno: ' + err)
+        // waiting flash msg
+        res.redirect(`/admin/users#${id}`)
     })
 }
