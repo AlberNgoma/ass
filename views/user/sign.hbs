@@ -1,1 +1,83 @@
-<p>tela de sign in/up</p>
+<section id="sign-content" class="is-height-full is-flex is-align-items-center">
+    <div class="container">
+
+        <div class="columns is-centered is-multiline" id="signin">
+
+            <div class="column is-10-mobile is-offset-1-mobile is-4-tablet is-3-desktop box">
+                <div class="is-size-4 has-text-weight-semibold has-text-centered">
+                    <span>Entrar</span>
+                </div>
+
+                <div class="inputs mt-6">
+                    <form method="post">
+
+                        <div class="input-item mt-3">
+                            <input class="input" type="tel" name="signinUserTel" id="signinUserTel" placeholder="telefone"
+                                maxlength="11" required />
+                        </div>
+
+                        <div class="input-item mt-3">
+                            <input class="input" type="password" name="signinUserSenha" id="signinUserSenha" placeholder="senha" required />
+                        </div>
+
+                        <div class="input-item">
+                            <button id="btn_signin" type="submit"
+                                class="button is-fullwidth is-primary mt-4">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="column is-12 mt-3">
+                <p class="has-text-centered">Não tem Conta? <a onclick="signToggleForm()">Crie</a></p>
+            </div>
+
+        </div>
+
+        <div class="columns is-centered is-multiline is-hidden" id="signup">
+
+            <div class="column is-10-mobile is-offset-1-mobile is-4-tablet is-3-desktop box">
+
+                <div class="is-size-4 has-text-weight-semibold has-text-centered">
+                    <span>Cadastro</span>
+                </div>
+
+                <div class="inputs mt-6">
+                    <form method="post">
+
+                        <div class="input-item mt-3">
+                            <input class="input" type="text" name="signupUserName" id="signupUserName" placeholder="nome" required />
+                        </div>
+
+                        <div class="input-item mt-3">
+                            <input class="input" type="tel" name="signupUserTel" id="signupUserTel" placeholder="telefone" maxlength="11" required />
+                        </div>
+
+                        <div class="input-item mt-3">
+                            <input class="input" type="password" name="signupUserSenha" id="signupUserSenha" placeholder="senha" required />
+                        </div>
+
+                        <div class="input-item mt-3">
+                            <input class="input" type="password" name="signupUserSenhaConfirm" id="signupUserSenhaConfirm" placeholder="confirme a senha" required />
+                        </div>
+
+                        <div class="input-item mt-3">
+                            <button type="submit" class="button is-fullwidth is-primary mt-4">Criar Conta</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="column is-12 has-text-centered mt-3">
+                <p>Já tem Conta? <a onclick="signToggleForm()">Entre</a></p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="/js/views/sign.func.js"></script>
