@@ -12,6 +12,10 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    pwd: {
+        type: String,
+        required: true
+    },
     role: {
         type: String,
         enum: ['Usuário', 'Estudante', 'Secretária', 'Administrador'],

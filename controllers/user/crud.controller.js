@@ -1,3 +1,6 @@
+/* module import */
+import bcrypt from 'bcryptjs'
+
 /* service import */
 import * as UserServices from '../../services/user/user.service.js'
 
@@ -6,18 +9,25 @@ export const createUser = (req, res) => {
 
     const data = {
         name: req.body.signupUserName,
-        tel: req.body.signupUserTel
+        tel: req.body.signupUserTel,
+        pwd: req.body.signupUserPassword
     }
 
-    UserServices.create(data).then(() => {
 
-        // waiting flash msg
-        res.redirect('/user/sign/in')
-        
-    }).catch(err => {
-        
-        console.log('Erro Interno: ' + err)
-        res.redirect('/user/sign/up')
+    bcrypt.hash(data.pwd, 10).then(hash => {
+
+        data.pwd = hash
+
+        UserServices.create(data).then(() => {
+
+            // waiting flash msg
+            res.redirect('/user/sign?action=in')
+
+        }).catch(err => {
+
+            console.log('Erro Interno: ' + err)
+            res.redirect('/user/sign?action=up')
+        })
     })
 }
 
@@ -28,9 +38,9 @@ export const updateUser = (req, res) => {
         tel: req.body.updateUserTel
         // waiting other fields
     }
-    
+
     UserServices.update(req.params.id, data).then(() => {
-        
+
         // waiting flash msg
         res.redirect('/user/profile')
 
