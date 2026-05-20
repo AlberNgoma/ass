@@ -5,6 +5,9 @@ import { fileURLToPath } from 'url'
 import path from 'path'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
+import passport from 'passport'
+import session from 'express-session'
+import flash from 'connect-flash'
 
 /* app config */
 const app = express();
@@ -37,6 +40,33 @@ mongoose.connect('mongodb://localhost/ass').then(() => {
     // waiting createAdminIfNotExists()
 
 }).catch(err => { console.log('MongoDB Error: ' + err) })
+
+/* session config */
+app.use(session({
+    secret: '112358132134',
+    resave: true,
+    saveUninitialized: true
+}))
+
+/* passport config */
+import auth from './config/auth.js'
+auth(passport)
+
+app.use(passport.initialize())
+app.use(passport.session())
+
+/* flash config */
+app.use(flash())
+
+/* middlewares */
+app.use((req, res, next) => {
+    res.locals.info_msg = req.flash('info_msg')
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+    res.locals.error = req.flash('error')
+    res.locals.user = req.user || null
+    next()
+})
 
 /* files import */
 import userRoutes from './routes/user/user.route.js'

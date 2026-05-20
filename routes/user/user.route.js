@@ -11,6 +11,9 @@ import * as userControllers from '../../controllers/user/user.controller.js'
 /* user routes */
 router.get('/sign', userControllers.showSign)
 router.post('/sign/up', crudControllers.createUser)
+router.post('/sign/in', userControllers.signin)
+router.post('/sign/out', userControllers.signout)
+
 router.post('/update/:id', crudControllers.updateUser)
 router.post('/update/photo/:id', crudControllers.updatePhotoUser)
 
