@@ -17,4 +17,6 @@ router.post('/sign/out', userControllers.signout)
 router.post('/update/:id', crudControllers.updateUser)
 router.post('/update/photo/:id', crudControllers.updatePhotoUser)
 
+router.get('/profile', userControllers.profile)
+
 export default router

@@ -33,3 +33,8 @@ export const signout = (req, res) => {
         }
     })
 }
+
+export const profile = (req, res) => {
+
+    res.render('user/profile')
+}
