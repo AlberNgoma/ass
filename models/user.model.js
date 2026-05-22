@@ -26,7 +26,7 @@ const UserSchema = new Schema({
         enum: ['Offline', 'Online', 'Bloqueado'],
         default: 'Offline'
     },
-    foto: {
+    photo: {
         type: String,
         default: 'avatar.png'
     },

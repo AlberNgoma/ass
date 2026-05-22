@@ -1,35 +1,35 @@
 <section id="profile--content" class="container">
 
-	<div class="columns">
+    <div class="columns">
 
-		<div class="column is-12-mobile is-6-tablet is-4-desktop">
-		
-			<div class="card">
+        <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-4-desktop">
+
+            <div class="card">
                 <div class="card-image">
                     <figure class="image">
-                        <img src="/files/img/users/vladmir.png" alt="User Name" />
+                        <img src="/files/img/users/{{user.photo}}" alt="{{user.name}}" />
                     </figure>
                 </div>
                 <div class="card-content">
                     <div class="media">
                         <div class="media-content">
-                            <h3 class="has-text-weight-bold has-text-primary is-size-4">User Name</h3>
-                            <h4 class="has-text-weight-semibold is-size-6 mt-1">999999999</h4>
+                            <h3 class="has-text-weight-bold has-text-primary is-size-4">{{user.name}}</h3>
+                            <h4 class="has-text-weight-semibold is-size-6 mt-1">{{user.tel}}</h4>
                         </div>
                     </div>
 
                     <div class="content">
-                        <span class="tag is-light has-text-drak is-size-6">Role</span>
+                        <span class="tag is-light has-text-drak is-size-6">{{user.role}}</span>
                     </div>
                 </div>
             </div>
 
-		</div>
+        </div>
 
-		<div class="column is-12-mobile is-6-tablet is-8-desktop">
-			cards actions
-		</div>
+        <div class="column is-12-mobile is-6-tablet is-8-desktop">
+            cards actions
+        </div>
 
-	</div>
+    </div>
 
 </section>
