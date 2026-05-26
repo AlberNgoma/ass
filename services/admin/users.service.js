@@ -4,22 +4,19 @@ import User from "../../models/user.model.js";
 /* services */
 export const read = (role) => {
 
-    User.find({ role: role })
+    return User.find({ role: role })
         .sort({ 'data.create': 'desc' })
         .lean()
-        .then((users) => {
-
-            return users
-
-        }).catch(err => console.log(err))
+        .then()
+        .catch(err => console.log(err))
 }
 
 export const block = (id) => {
 
     User.findByIdAndUpdate(
-        
-        {_id: id},
-        {$set: {status: 'Bloqueado'}}
+
+        { _id: id },
+        { $set: { status: 'Bloqueado' } }
 
     ).then(() => {
 
@@ -31,9 +28,9 @@ export const block = (id) => {
 export const unblock = (id) => {
 
     User.findByIdAndUpdate(
-    
-        {_id: id},
-        {$set: {status: 'Offline'}}
+
+        { _id: id },
+        { $set: { status: 'Offline' } }
 
     ).then(() => {
 
@@ -46,8 +43,8 @@ export const updateRole = (id, role) => {
 
     User.findByIdAndUpdate(
 
-        {_id: id},
-        {$set: {role: role}}
+        { _id: id },
+        { $set: { role: role } }
 
     ).then(() => {
 
@@ -58,7 +55,7 @@ export const updateRole = (id, role) => {
 
 export const delet = (id) => {
 
-    User.findByIdAndDelete({_id: id}).then(() => {
+    User.findByIdAndDelete({ _id: id }).then(() => {
 
         console.log('Usuário Deletado')
 

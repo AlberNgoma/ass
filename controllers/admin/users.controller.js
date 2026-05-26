@@ -10,9 +10,10 @@ export const readUsers = (req, res) => {
 
         // waiting flash msg
         // waiting render view w/ users data
-        
+        res.render('admin/users', { users })
+
     }).catch(err => {
-        
+
         console.log('Erro Interno: ' + err)
         // waiting flash msg
         res.redirect(`/admin/users#users-content--${role}`)
@@ -29,7 +30,7 @@ export const blockUser = (req, res) => {
         res.redirect(`/admin/users#user-content--${id}`)
 
     }).catch(err => {
-        
+
         console.log('Erro Interno: ' + err)
         // waiting flash msg
         res.redirect(`/admin/users#user-content--${id}`)
@@ -60,20 +61,20 @@ export const updateRoleUser = (req, res) => {
 
     // enum: ['Usuário', 'Estudante', 'Secretária', 'Administrador'],
 
-    if(role == 'Usuário' || role == 'Estudante' || role == 'Secretária' || role == 'Administrador') {
+    if (role == 'Usuário' || role == 'Estudante' || role == 'Secretária' || role == 'Administrador') {
 
         UsersManagerServices.updateRole(id, role).then(() => {
-            
+
             // waiting flash msg
             res.redirect(`/admin/users#user-content--${id}`)
-            
+
         }).catch(err => {
 
             console.log('Erro interno: ' + err)
             // waiting flash msg
             res.redirect(`/admin/users#user-content--${id}`)
         })
-    
+
     } else {
 
         // waiting flash msg 'Role não Prevista'

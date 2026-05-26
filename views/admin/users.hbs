@@ -1,0 +1,96 @@
+<section id="admin-users--container" class="container">
+
+    <div class="columns margin-top-5">
+        <div class="column is-11-mobile is-11-tablet is-12-desktop mx-auto">
+
+            <div class="header">
+
+                <h1 class="is-size-4-mobile is-size-3 has-text-weight-bold has-text-link is-flex is-align-items-center is-gap-1">
+                    <i class="bx bx-group"></i>
+                    <span>Gestão de Usuários</span>
+                </h1>
+                <hr>
+
+            </div>
+
+            <div class="search">
+
+            </div>
+
+            <div class="content">
+                <div class="columns is-multiline">
+                    {{#each users}}
+                    <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                        <div class="card">
+
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                            <img src="/files/img/users/{{photo}}" class="is-rounded" />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="is-flex is-gap-1 is-align-items-center">
+                                            <p class="has-text-weight-semibold is-4">{{name}}</p>
+                                        </div>
+                                        <p class="has-text-primary is-6">
+                                            <span>{{tel}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <footer class="card-footer">
+                                <a data-target="user-delete--modal"
+                                    class="card-footer-item is-flex is-gap-1 js-modal-trigger" data-userId="{{_id}}" onclick="userDeleteSetId('{{_id}}')">
+                                    <i class="bx bx-block has-text-danger"></i>
+                                    <span class="has-text-danger-80 has-text-weight-semibold is-size-7">del.</span>
+                                </a>
+                                <a class="card-footer-item is-flex is-gap-1">
+                                    <i class="bx bx-lock-alt has-text-warning"></i>
+                                    <span class="has-text-warning-70 has-text-weight-semibold is-size-7">bloq.</span>
+                                </a>
+                                <a class="card-footer-item is-flex is-gap-1">
+                                    <i class="bx bx-detail has-text-info"></i>
+                                    <span class="has-text-info-80 has-text-weight-semibold is-size-7">info.</span>
+                                </a>
+                            </footer>
+
+                        </div>
+                    </div>
+                    {{else}}
+                    <p>sem users</p>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+<div class="modal" id="user-delete--modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Deletar Usuário?</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+
+        <footer class="modal-card-foot">
+            <div class="buttons w-100 is-flex is-justify-content-space-between">
+                <button type="submit" form="user-delete--form" class="button is-ghost has-background-danger-90 has-text-danger-60">
+                    Sim, Deletar
+                </button>
+                <button class="button">Cancelar</button>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<form method="post" id="user-delete--form"></form>
+
+<script defer src="/js/components/modal.module.js"></script>
+<script src="/js/admin/users.modules.js"></script>

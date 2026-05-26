@@ -1,4 +1,8 @@
-@import 'custom.css';
+/* utils */
+@import 'media_query.css';
 
 /* views */
-@import 'sign.css'
+@import 'sign.css';
+
+/* customizations */
+@import 'custom.css';
