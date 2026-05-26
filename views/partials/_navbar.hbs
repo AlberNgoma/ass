@@ -47,6 +47,14 @@
 
         <div class="navbar-end">
             <div class="navbar-item">
+                {{#if user}}
+                <div class="buttons">
+                    <button type="submit" form="user-signout--form" class="button is-ghost has-background-danger-90 has-text-danger-60 is-flex is-gap-1">
+                        <i class="bx bx-log-out"></i>
+                        <span>Sair</span>
+                    </button>
+                </div>
+                {{else}}
                 <div class="buttons">
                     <a href="/user/sign?action=up" class="button is-primary">
                         <strong>Criar Conta</strong>
@@ -56,10 +64,12 @@
                         Entrar
                     </a>
                 </div>
+                {{/if}}
             </div>
         </div>
     </div>
 </nav>
 
+<form action="/user/sign/out" method="post" id="user-signout--form"></form>
 
 <script defer src="/js/components/navbar.func.js"></script>
