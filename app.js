@@ -12,6 +12,9 @@ import flash from 'connect-flash'
 /* app config */
 const app = express();
 
+/* files import */
+import createAdminIfNotExist from "./helpers/createAdmin.helper.js"
+
 /* handlebars config */
 const hdb = handlebars.create({
 
@@ -34,10 +37,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 /* mongoose config */
-mongoose.connect('mongodb://localhost/ass').then(() => {
+mongoose.connect('mongodb://localhost/ass').then(async () => {
 
     console.log('MongoDB connected')
-    // waiting createAdminIfNotExists()
+    await createAdminIfNotExist()
 
 }).catch(err => { console.log('MongoDB Error: ' + err) })
 
@@ -68,7 +71,7 @@ app.use((req, res, next) => {
     next()
 })
 
-/* files import */
+/* external routes import */
 import userRoutes from './routes/user/user.route.js'
 import adminUsersManagementRoutes from './routes/admin/users.route.js'
 
