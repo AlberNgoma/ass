@@ -4,25 +4,24 @@
         <div class="column is-11-mobile is-11-tablet is-12-desktop mx-auto">
 
             <div class="header">
-                {{>_admin/_users/_header}}
+                {{>_admin/users/layouts/header}}
             </div>
 
             <div class="search">
-                {{>_admin/_users/_search}}
+                {{>_admin/users/layouts/search}}
             </div>
 
             <div class="content">
-                {{>_admin/_users/_content}}
+                {{>_admin/users/layouts/content}}
             </div>
 
         </div>
     </div>
 
-
 </section>
 
-{{>_admin/_secretarias/_create_modal}}
-{{>_admin/_users/_delete_modal}}
+{{>_admin/secretarias/components/modals/create}}
+{{>_admin/users/components/modals/delete}}
 
 <script defer src="/js/components/modal.module.js"></script>
 <script src="/js/admin/users.modules.js"></script>
