@@ -79,6 +79,7 @@ app.use((req, res, next) => {
 /* external routes import */
 import userRoutes from './routes/user/user.route.js'
 import adminUsersManagementRoutes from './routes/admin/users.route.js'
+import secretariaServicesRoutes from './routes/secretaria/services.route.js'
 
 /* internal routes */
 app.get("/", (req, res) => {
@@ -88,6 +89,7 @@ app.get("/", (req, res) => {
 /* external roues */
 app.use('/user', userRoutes)
 app.use('/admin', adminUsersManagementRoutes)
+app.use('/secretaria', secretariaServicesRoutes)
 
 /* server listen */
 app.listen(3000, () => {

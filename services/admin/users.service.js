@@ -7,7 +7,6 @@ export const read = (role) => {
     return User.find({ role: role })
         .sort({ 'data.create': 'desc' })
         .lean()
-        .then()
         .catch(err => console.log(err))
 }
 
