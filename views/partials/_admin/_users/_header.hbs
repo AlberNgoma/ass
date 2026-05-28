@@ -1,0 +1,12 @@
+<div class="is-flex is-justify-content-space-between is-align-items-center">
+
+    <h1 class="is-size-4-mobile is-size-3 has-text-weight-bold has-text-link is-flex is-align-items-center is-gap-1">
+        <i class="bx bx-group"></i>
+        <span>Gestão de {{role}}s</span>
+    </h1>
+
+    {{#if (eq role 'Secretária')}}
+    <button class="button is-primary js-modal-trigger" data-target="secretaria-create--modal">Cadastrar</button>
+    {{/if}}
+</div>
+<hr>
