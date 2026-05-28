@@ -16,6 +16,6 @@ router.post('/users/update/role/:id', UsersManagerControllers.updateRoleUser)
 router.post('/users/delete/:id/:role', UsersManagerControllers.deleteUser)
 
 /* secretárias management by admin routes */
-router.post('/users/create/Secretaria', SecretariasManagerControllers.createSecretaria)
+router.post('/users/create/secretaria', SecretariasManagerControllers.createSecretaria)
 
 export default router
