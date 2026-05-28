@@ -1,0 +1,21 @@
+<div class="modal" id="user-delete--modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Deletar {{role}}?</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+
+        <footer class="modal-card-foot">
+            <div class="buttons w-100 is-flex is-justify-content-space-between">
+                <button type="submit" form="user-delete--form"
+                    class="button is-ghost has-background-danger-90 has-text-danger-60">
+                    Sim, Deletar
+                </button>
+                <button class="button">Cancelar</button>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<form method="post" id="user-delete--form"></form>
