@@ -10,7 +10,7 @@ export const readUsers = (req, res) => {
 
         // waiting flash msg
         // waiting render view w/ users data
-        res.render('admin/users', { users })
+        res.render('admin/users', { users, role })
 
     }).catch(err => {
 
