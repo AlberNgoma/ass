@@ -2,7 +2,8 @@
 
     <div class="columns is-multiline is-flex">
 
-        <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet is-4-desktop is-offset-0-desktop">
+        <div
+            class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet is-4-desktop is-offset-0-desktop">
 
             <div class="card">
                 <div class="card-image">
@@ -26,12 +27,22 @@
 
         </div>
 
-        <div class="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet is-8-desktop is-offset-0-desktop">
+        <div
+            class="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet is-8-desktop is-offset-0-desktop">
             {{#if (eq user.role 'Administrador')}}
-            {{>_admin/_dashboard}}
+            <section id="dashboard-admin" class="container">
+                <div class="box has-background-link-90">
+                    {{>_admin/dashboard}}
+                    {{>_secretaria/dashboard}}
+                </div>
+            </section>
             {{/if}}
             {{#if (eq user.role 'Secretária')}}
-            secretaria dashboard
+            <section id="dashboard-secretaria" class="container">
+                <div class="box has-background-link-90">
+                    {{>_secretaria/dashboard}}
+                </div>
+            </section>
             {{/if}}
             {{#if (eq user.role 'Estudante')}}
             estudante dashboard
