@@ -85,17 +85,17 @@ export const updateRoleUser = (req, res) => {
 export const deleteUser = (req, res) => {
 
     const id = req.params.id
-    const role = req.params.deleteUserRole
+    const role = req.params.role
 
     UsersManagerServices.delet(id).then(() => {
 
         // waiting flash msg
-        res.redirect(`/admin/users#users-content--${role}`)
+        res.redirect(`/admin/users/read/${role}`)
 
     }).catch(err => {
 
         console.log('Erro Interno: ' + err)
         // waiting flash msg
-        res.redirect(`/admin/users#users-content--${role}`)
+        res.redirect(`/admin/users/read/${role}`)
     })
 }

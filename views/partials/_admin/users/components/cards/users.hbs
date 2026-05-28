@@ -1,0 +1,37 @@
+<div class="card">
+
+    <div class="card-content">
+        <div class="media">
+            <div class="media-left">
+                <figure class="image is-48x48">
+                    <img src="/files/img/users/{{photo}}" class="is-rounded" />
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="is-flex is-gap-1 is-align-items-center">
+                    <p class="has-text-weight-semibold is-4">{{name}}</p>
+                </div>
+                <p class="has-text-primary is-6">
+                    <span>{{tel}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="card-footer">
+        <a data-target="user-delete--modal" class="card-footer-item is-flex is-gap-1 js-modal-trigger"
+            data-userId="{{_id}}" onclick="userDeleteSetIdAndRole('{{_id}}', '{{role}}')">
+            <i class="bx bx-block has-text-danger"></i>
+            <span class="has-text-danger-80 has-text-weight-semibold is-size-7">del.</span>
+        </a>
+        <a class="card-footer-item is-flex is-gap-1">
+            <i class="bx bx-lock-alt has-text-warning"></i>
+            <span class="has-text-warning-70 has-text-weight-semibold is-size-7">bloq.</span>
+        </a>
+        <a class="card-footer-item is-flex is-gap-1">
+            <i class="bx bx-detail has-text-info"></i>
+            <span class="has-text-info-80 has-text-weight-semibold is-size-7">info.</span>
+        </a>
+    </footer>
+
+</div>

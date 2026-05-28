@@ -55,7 +55,7 @@ export const updateRole = (id, role) => {
 
 export const delet = (id) => {
 
-    User.findByIdAndDelete({ _id: id }).then(() => {
+    return User.findByIdAndDelete({ _id: id }).then(() => {
 
         console.log('Usuário Deletado')
 

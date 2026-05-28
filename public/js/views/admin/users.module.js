@@ -1,5 +1,5 @@
-function userDeleteSetId(id) {
+function userDeleteSetIdAndRole(id, role) {
 
     const form = document.querySelector('form#user-delete--form')
-    form.setAttribute('action', `/admin/users/read/delete/${id}`)
+    form.setAttribute('action', `/admin/users/delete/${id}/${role}`)
 }
