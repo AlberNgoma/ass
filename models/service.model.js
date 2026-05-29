@@ -16,6 +16,11 @@ const ServiceSchema = new Schema({
         type: Number,
         required: true
     },
+    status: {
+        type: String,
+        enum: ['Ativo', 'Inativo'],
+        default: 'Ativo'
+    },
     create: {
         type: Date,
         default: Date.now

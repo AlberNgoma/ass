@@ -10,6 +10,6 @@ import * as servicesMangerController from '../../controllers/secretaria/services
 /* secretaria routes */
 router.get('/services/read', servicesMangerController.readServices)
 router.post('/services/create', servicesMangerController.createService)
-router.post('/services/delete/:id', servicesMangerController.deleteService)
+router.post('/services/update/status/:id/:status', servicesMangerController.updateStatusService)
 
 export default router

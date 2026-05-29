@@ -1,0 +1,27 @@
+<div class="columns is-multiline">
+    <div class="column is-12">
+        <table class="table is-striped is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Preço</th>
+                    <th>Duração</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each services}}
+                {{>_secretaria/services/components/lists/services}}
+                {{else}}
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        <p class="has-text-centered has-text-info w-100">Nenhum Serviço Cadastrado</p>
+                    </td>
+                </tr>
+            </tbody>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
