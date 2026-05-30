@@ -1,8 +1,8 @@
 /* modules import */
-import {Rourer} from 'express'
+import {Router} from 'express'
 
 /* router config */
-const router = Rourer()
+const router = Router()
 
 /* controllers import */
 import * as ScheduleControllers from '../../controllers/estudante/schedules.controller.js'

@@ -7,7 +7,7 @@ export const readSchedules = (req, res) => {
     ScheduleServices.read().then((schedules) => {
 
         // waiting flash msg
-        res.render('/schedules', { schedules })
+        res.render('schedules', { schedules })
 
     }).catch(err => {
 
