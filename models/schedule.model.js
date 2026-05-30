@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const {Schema, model} = mongoose
 
-const MarkSchema = new Schema({
+const ScheduleSchema = new Schema({
 
     student: {
         type: Schema.Types.ObjectId,
@@ -30,6 +30,6 @@ const MarkSchema = new Schema({
     }
 })
 
-const Mark = model('Mark', MarkSchema)
+const Schedule = model('Schedule', ScheduleSchema)
 
-export default Mark
+export default Schedule
