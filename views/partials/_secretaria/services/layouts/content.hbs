@@ -25,3 +25,72 @@
         </table>
     </div>
 </div>
+
+<div class="modal" id="service-create--modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Cadastrar Serviço</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+
+        <section class="modal-card-body">
+            <form action="/secretaria/services/create" method="post" id="service-create--form">
+
+                <div class="columns is-multiline">
+
+                    <div class="column is-12">
+                        <div class="field">
+                            <label class="label">Título</label>
+                            <div class="control">
+                                <input name="createServiceTitle" id="createServiceTitle" class="input" type="text"
+                                    placeholder="ex.: Mensalidade">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-12-mobile is-6-tablet">
+                        <div class="field">
+                            <label class="label">Preço</label>
+                            <div class="control">
+                                <input name="createServicePrice" id="createServicePrice" class="input" type="number"
+                                    placeholder="ex.: 15000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-12-mobile is-6-tablet">
+                        <div class="field">
+                            <label class="label">Duração (minutos)</label>
+                            <div class="control">
+                                <input name="createServiceDuraction" id="createServiceDuraction" class="input"
+                                    type="number" placeholder="ex.: 10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-12">
+                        <div class="field">
+                            <label class="label">Título</label>
+                            <div class="select is-fullwidth">
+                                <select name="createServiceStatus" id="createServiceStatus">
+                                    <option value="Ativo" selected>Ativo</option>
+                                    <option value="Inativo">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </section>
+
+        <footer class="modal-card-foot">
+            <div class="buttons w-100 is-flex is-justify-content-space-between">
+                <button class="button">Cancelar</button>
+                <button type="submit" form="service-create--form" class="button is-primary">Cadastrar</button>
+            </div>
+        </footer>
+    </div>
+</div>

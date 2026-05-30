@@ -12,7 +12,7 @@ export const read = () => {
 
 export const create = (data) => {
 
-    return new Service(data).then(() => {
+    return new Service(data).save().then(() => {
 
         console.log('Serviço Cadastrado')
 

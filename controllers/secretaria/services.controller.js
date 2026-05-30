@@ -20,9 +20,10 @@ export const readServices = (req, res) => {
 export const createService = (req, res) => {
 
     const data = {
-        title: req.body.serviceCreateTitle,
-        price: req.body.serviceCreatePrice,
-        duraction: req.body.serviceCreateDuraction
+        title: req.body.createServiceTitle,
+        price: req.body.createServicePrice,
+        duraction: req.body.createServiceDuraction,
+        status: req.body.createServiceStatus
     }
 
     servicesService.create(data).then(() => {
