@@ -2,7 +2,8 @@
 
     <div class="columns is-multiline is-flex">
 
-        <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet is-4-desktop is-offset-0-desktop">
+        <div
+            class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet is-4-desktop is-offset-0-desktop">
             {{>_user/profile/components/cards/user}}
             {{>_user/profile/components/cards/edit}}
         </div>
@@ -25,7 +26,12 @@
             </section>
             {{/if}}
             {{#if (eq user.role 'Estudante')}}
-            estudante dashboard
+            <section id="dashboard-estudante" class="container">
+                <div class="box has-background-info-90">
+                    {{>_estudante/dashboard}}
+                </div>
+            </section>
+
             {{/if}}
             {{#if (eq user.role 'Usuário')}}
             {{>_user/profile/layouts/info}}
@@ -35,5 +41,3 @@
     </div>
 
 </section>
-
-<form action="/user/update/role" method="post" id="user-update-role--form"></form>
