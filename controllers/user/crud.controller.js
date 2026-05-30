@@ -39,7 +39,7 @@ export const updateUser = (req, res) => {
         // waiting other fields
     }
 
-    UserServices.update(req.params.id, data).then(() => {
+    UserServices.update(req.user._id, data).then(() => {
 
         // waiting flash msg
         res.redirect('/user/profile')
@@ -55,14 +55,30 @@ export const updatePhotoUser = (req, res) => {
 
     const foto = req.body.updateUserPhoto
 
-    UserServices.updatePhoto(req.params.id, foto).then(() => {
+    UserServices.updatePhoto(req.user._id, foto).then(() => {
 
         // waiting flash msg
         res.redirect('/user/profile')
+        
+    }).catch(err => {
+        
+        console.log('Erro Interno: ' + err)
+        // waiting flash msg
+        res.redirect('/user/profile')
+    })
+}
 
+export const updateRoleUser = (req, res) => {
+
+    UserServices.updateRole(req.user._id).then(() => {
+
+        res.redirect('/user/profile')
+        // waiting flash msg
+        
     }).catch(err => {
 
         console.log('Erro Interno: ' + err)
+        // waiting flash msg
         res.redirect('/user/profile')
     })
 }

@@ -14,8 +14,9 @@ router.post('/sign/up', crudControllers.createUser)
 router.post('/sign/in', userControllers.signin)
 router.post('/sign/out', userControllers.signout)
 
-router.post('/update/:id', crudControllers.updateUser)
-router.post('/update/photo/:id', crudControllers.updatePhotoUser)
+router.post('/update', crudControllers.updateUser)
+router.post('/update/photo', crudControllers.updatePhotoUser)
+router.post('/update/role', crudControllers.updateRoleUser)
 
 router.get('/profile', userControllers.profile)
 

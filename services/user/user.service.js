@@ -29,12 +29,24 @@ export const updatePhoto = (id, foto) => {
 
     User.findByIdAndUpdate(
 
-        {_id: id},
-        {$set: {foto: foto}}
+        { _id: id },
+        { $set: { foto: foto } }
 
     ).then(() => {
 
         console.log('Foto de Usuário Atuilizado')
+
+    }).catch(err => console.log(err))
+}
+
+export const updateRole = (id) => {
+
+    return User.findByIdAndUpdate(
+        { _id: id },
+        { $set: { 'role': 'Estudante' } }
+    ).then(() => {
+
+        console.log('Privilégio de Estudante Dado à Usuário')
 
     }).catch(err => console.log(err))
 }

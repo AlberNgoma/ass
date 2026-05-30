@@ -12,7 +12,7 @@ import * as SecretariasManagerControllers from '../../controllers/admin/secretar
 router.get('/users/read/:role', UsersManagerControllers.readUsers)
 router.post('/users/block/:id', UsersManagerControllers.blockUser)
 router.post('/users/unblock/:id', UsersManagerControllers.unblockUser)
-router.post('/users/update/role/:id', UsersManagerControllers.updateRoleUser)
+//router.post('/users/update/role/:id', UsersManagerControllers.updateRoleUser)
 router.post('/users/delete/:id/:role', UsersManagerControllers.deleteUser)
 
 /* secretárias management by admin routes */
