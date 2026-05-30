@@ -1,0 +1,25 @@
+<section id="public-services--container" class="container">
+
+    <div class="columns margin-top-5">
+        <div class="column is-11-mobile is-11-tablet is-12-desktop mx-auto">
+
+            <div class="header">
+                {{>_public/services/layouts/header}}
+            </div>
+
+            <div class="search">
+                {{>_public/services/layouts/search}}
+            </div>
+
+            <div class="content">
+                {{#if (or (eq user.role 'Administrador') (eq user.role 'Secretária'))}}
+                {{>_secretaria/services/layouts/content}}
+                {{else}}
+                {{>_public/services/layouts/content}}
+                {{/if}}
+            </div>
+
+        </div>
+    </div>
+
+</section>

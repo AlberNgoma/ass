@@ -21,6 +21,10 @@ const hdb = handlebars.create({
         eq: function (a, b) {
 
             return a === b
+        },
+        or: function(a, b) {
+
+            return a || b
         }
     },
     defaultLayout: 'main',
@@ -81,10 +85,13 @@ import userRoutes from './routes/user/user.route.js'
 import adminUsersManagementRoutes from './routes/admin/users.route.js'
 import secretariaServicesRoutes from './routes/secretaria/services.route.js'
 
+/* app controllers import */
+import * as appControllers from './controllers/app/app.controller.js'
+
 /* internal routes */
-app.get("/", (req, res) => {
-    res.render("home")
-})
+app.get('/', appControllers.home)
+
+app.get('/services', appControllers.readServices)
 
 /* external roues */
 app.use('/user', userRoutes)

@@ -7,7 +7,7 @@ export const readServices = (req, res) => {
     servicesService.read().then((services) => {
 
         // waiting flash msg
-        res.render('secretaria/services', { services })
+        res.render('services', { services })
 
     }).catch(err => {
 
