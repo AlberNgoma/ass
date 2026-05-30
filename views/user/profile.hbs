@@ -2,8 +2,7 @@
 
     <div class="columns is-multiline is-flex">
 
-        <div
-            class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet is-4-desktop is-offset-0-desktop">
+        <div class="column is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet is-4-desktop is-offset-0-desktop">
 
             <div class="card">
                 <div class="card-image">
@@ -22,6 +21,20 @@
                     <div class="content">
                         <span class="tag is-light has-text-drak is-size-6">{{user.role}}</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="is-flex is-justify-content-space-between">
+                    <button class="button">
+                        <i class="bx bx-pencil"></i>
+                    </button>
+                    <button class="button">
+                        <i class="bx bx-camera"></i>
+                    </button>
+                    <button class="button">
+                        <i class="bx bx-shield"></i>
+                    </button>
                 </div>
             </div>
 
@@ -48,7 +61,42 @@
             estudante dashboard
             {{/if}}
             {{#if (eq user.role 'Usuário')}}
-            user dashboard
+            <div class="columns is-multiline">
+                <div class="column is-12">
+                    <div class="box has-background-warning-90 has-text-centered">
+                        <header>
+                            <h5 class="title is-size-5 has-text-warning-50">Complete o seu Perfil</h5>
+                        </header>
+
+                        <div class="content mt-4">
+                            <p class="has-text-grey">
+                                Caro Usuário, agradecemos pelo Registro em nossa Plataforma! Informamos que a sua Conta encontra-se com o Privilégio 'Usuário', pelo que não terá acesso as Funcionalidades do Privilégio de 'Estudante'.
+                                <br><br>
+                                <span class="has-text-warning-50 has-text-weight-semibold">
+                                    Para Validar a sua Conta para Estudante, complete o seu Perfil com mais Dados e Foto
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <div class="box has-background-success-90 has-text-centered">
+                        <header>
+                            <h5 class="title is-size-5 has-text-primary-40">Promover Conta para Estudante</h5>
+                        </header>
+
+                        <div class="content mt-4">
+                            <p class="has-text-grey">
+                                Parabéns, estás há um clique de Promover a sua Conta para Estudante!
+                            </p>
+                            <br><br>
+                            <button class="button is-primary">
+                                Promover a Conta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {{/if}}
         </div>
 
