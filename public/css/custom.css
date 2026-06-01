@@ -14,3 +14,7 @@ nav {
     background-color: #f8f8f8 !important;
     border-bottom: 1px solid #d8d8d8;
 }
+
+.opac-5 {
+    opacity: .5 !important;
+}

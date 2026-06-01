@@ -6,3 +6,11 @@
 
 /* customizations */
 @import 'custom.css';
+
+.week-day--content.is-clickable:not(.opac-5) {
+    transition: .3s;
+}
+
+.week-day--content.is-clickable:not(.opac-5):hover {
+    box-shadow: 0 6px 12px var(--bulma-primary-90) !important;
+}
