@@ -1,1 +1,25 @@
-schedules
+<section id="estudante-schedules--container" class="container">
+
+    <div class="columns margin-top-5">
+        <div class="column is-11-mobile is-11-tablet is-12-desktop mx-auto">
+
+            <div class="header">
+                {{>_estudante/schedules/layouts/header}}
+            </div>
+
+            <div class="search">
+                {{!-- {{>_estudante/schedules/layouts/search}} --}}
+            </div>
+
+            <div class="content">
+                {{#if (or (eq user.role 'Administrador') (eq user.role 'Secretária'))}}
+                {{>_secretaria/schedules/layouts/content}}
+                {{else}}
+                {{>_estudante/schedules/layouts/content}}
+                {{/if}}
+            </div>
+
+        </div>
+    </div>
+
+</section>

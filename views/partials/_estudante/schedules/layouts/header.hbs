@@ -1,0 +1,19 @@
+<div class="is-flex is-justify-content-space-between is-align-items-center">
+
+    <h1 class="is-size-4-mobile is-size-3 has-text-weight-bold has-text-link is-flex is-align-items-center is-gap-1">
+        <i class="bx bx-task"></i>
+        <span>
+            {{#if (or (eq user.role 'Administrador') (eq user.role 'Secretária'))}}
+            Gestão de
+            {{else}}
+            Minhas
+            {{/if}}
+            Marcações
+        </span>
+    </h1>
+
+    {{#if (eq user.role 'Estudante')}}
+    <button class="button is-primary js-modal-trigger" data-target="service-create--modal">Marcar</button>
+    {{/if}}
+</div>
+<hr>

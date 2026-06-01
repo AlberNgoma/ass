@@ -1,0 +1,22 @@
+<div class="columns is-multiline is-mobile">
+{{>_estudante/schedules/components/week}}
+{{>_estudante/schedules/components/week}}
+{{>_estudante/schedules/components/week}}
+{{>_estudante/schedules/components/week}}
+{{>_estudante/schedules/components/week}}
+</div>
+
+<script>
+    const weekDays = document.querySelectorAll('.week-day--content')
+
+    /*const month = new Date().getMonth()
+
+    alert(month)*/
+
+    weekDays.forEach((day, cont) => {
+
+        day.innerHTML = cont+1
+    })
+
+
+</script>
