@@ -10,7 +10,9 @@ export const createUser = (req, res) => {
     const data = {
         name: req.body.signupUserName,
         tel: req.body.signupUserTel,
-        pwd: req.body.signupUserPassword
+        pwd: req.body.signupUserPassword,
+        /* temp */
+        role: 'Estudante'
     }
 
 
